@@ -60,6 +60,20 @@ public class MyLinkedList<K> {
 		System.out.print(printformat);
 	}
 	
+	public void delete(K key) {
+		INode temp = head;
+		INode prev = null;
+		while(temp!=null) {
+			if (temp.getKey().equals(key)) {
+				temp = temp.getNext();
+				prev.setNext(temp);
+				break;
+			}
+			prev = temp;
+			temp = temp.getNext();
+		}
+	}
+	
 	@Override
 	public String toString() {
 		return "MyLinkedListNodes{" + head + "}" ;
